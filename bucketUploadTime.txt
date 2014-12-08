@@ -1,0 +1,12 @@
+Abhinav:project5 Devcenter$ python st.py clear
+file .DS_Store uploaded in 2 seconds
+Successfully created "bucket-246/.DS_Store"
+file 100row.csv uploaded in 43 seconds
+Successfully created "bucket-246/100row.csv"
+file 10row.csv uploaded in 4 seconds
+Successfully created "bucket-246/10row.csv"
+file 25row.csv uploaded in 11 seconds
+Successfully created "bucket-246/25row.csv"
+file 50row.csv uploaded in 30 seconds
+Successfully created "bucket-246/50row.csv"
+Abhinav:project5 Devcenter$ 

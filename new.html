@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript">
+var elem = 'center_s'
+var elem2= 'right_side'
+$(document).ready(renderAll(elem,elem2));
+function renderAll(elem,elem2){
+pie(elem);
+//pie(elem2);
+}
+
+function pie(elem,elem2) {
+  
+    var options = {
+        chart: {
+            renderTo: elem,
+            type: 'pie'
+        },
+        title: {
+            text: 'Probabilty'
+        },
+         plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        }
+        ,
+        series: [{}]
+    };
+
+    $.getJSON('data.json', function(data) {
+        options.series[0].data = data;
+        var chart = new Highcharts.Chart(options);
+    });
+
+}
+
+
+</script>
+
+<style type="text/css">
+ #root {
+   background-color: #eee;
+ }
+
+#left_side {
+float: left;
+ }
+
+#center_s {
+margin-left: auto;
+margin-right: auto;
+background-color: #ccc;
+}
+
+#right_side {
+float: right;
+}
+</style>
+</head>
+<body>
+<div id="root">
+    <div id="left_side"></div>
+    <div id="right_side"></div>
+    <div id="center_s"></div>
+</div>
+</body>
+</html>
